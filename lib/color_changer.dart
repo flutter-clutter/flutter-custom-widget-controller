@@ -5,7 +5,7 @@ import 'package:flutter_custom_controller/color_changer_controller.dart';
 
 class ColorChanger extends StatefulWidget {
   ColorChanger({
-    @required this.controller,
+    required this.controller,
   });
 
   final ColorChangerController controller;
@@ -15,9 +15,8 @@ class ColorChanger extends StatefulWidget {
 }
 
 class _ColorChangerState extends State<ColorChanger> with SingleTickerProviderStateMixin {
-  AnimationController _animationController;
-  Color currentColor;
-  Animation<Color> colorAnimation;
+  late AnimationController _animationController;
+  late Animation<Color?> colorAnimation;
 
   @override
   void initState() {
@@ -51,7 +50,7 @@ class _ColorChangerState extends State<ColorChanger> with SingleTickerProviderSt
     _animationController.forward();
 
     colorAnimation.addListener(() {
-      widget.controller.color = colorAnimation.value;
+      widget.controller.color = colorAnimation.value!;
       widget.controller.setValue(_animationController.value);
 
       if (colorAnimation.isCompleted) {

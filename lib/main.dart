@@ -30,7 +30,7 @@ class _ColorChangerTestState extends State<ColorChangerTest> {
   ScrollController textEditingController = ScrollController();
   ColorChangerController controller = ColorChangerController();
   int value = 0;
-  Color color = Colors.transparent;
+  Color? color = Colors.transparent;
 
   @override
   void initState() {
@@ -103,7 +103,7 @@ class _ColorChangerTestState extends State<ColorChangerTest> {
               height: 64,
               padding: EdgeInsets.symmetric(horizontal: 24, vertical: 16),
               child: LinearProgressIndicator(
-                valueColor: AlwaysStoppedAnimation<Color>(color),
+                valueColor: AlwaysStoppedAnimation<Color?>(color),
                 value: value.toDouble() / 100,
                 backgroundColor: Colors.transparent,
               ),
@@ -119,7 +119,7 @@ class _ColorChangerTestState extends State<ColorChangerTest> {
               onPressed: () => controller.changeColor(),
               child: Text('Animate'),
               style: ButtonStyle(
-                backgroundColor: MaterialStateColor.resolveWith((states) => color)
+                backgroundColor: MaterialStateColor.resolveWith((states) => color!)
               ),
             )
           ],
