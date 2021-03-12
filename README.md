@@ -6,4 +6,4 @@ A custom widget with a controller that enables the communication to and from out
 
 # Article
 
-Find the respective tutorial about how everything was created and how it's to be used on 
+Find the respective tutorial about how everything was created and how it's to be used on https://www.flutterclutter.dev/flutter/tutorials/create-a-controller-for-a-custom-widget/2021/2149/
